@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(name: 'USERNAME', defaultValue: 'User', description: 'Enter your username')
+    }
+
+    stages {
+        stage('Greeting') {
+            steps {
+                script {
+                    echo "Hello, ${params.USERNAME}!"
+                }
+            }
+        }
+    }
+}
